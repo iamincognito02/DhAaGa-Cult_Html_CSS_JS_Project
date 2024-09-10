@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "*.py": "python",
-        "*.java": "java",
-        "CGG2_1.C": "cpp"
-    },
-    "liveServer.settings.port": 5501
-}
