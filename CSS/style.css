@@ -1,0 +1,293 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    font-family: "Indie Flower";
+    font-size: larger;
+    font-weight: bold;
+    background-color: #dddb75;
+    /* cursor: url("../img/cursor.cur"), auto; */
+}
+
+.nav_img_div{
+    margin: 10px;
+}
+
+.nav_img {
+    height: 140px;
+    width: 359px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.nav-container {
+    width: 100%;
+    font-weight: bolder;
+    display: block;
+    margin: 0px;
+    position: sticky;
+    transition: top 0s;
+    background-color: rgb(0, 0, 0);
+    -webkit-text-fill-color: rgb(242, 229, 153);
+    top: 0;
+    text-transform: uppercase;
+    font-size: x-large;
+    box-shadow: rgb(49, 40, 54) 0px 0px 30px;
+    z-index: 11;
+}
+
+.ul-home {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    background-color: #000000;
+    position: fixed;
+    height: 100%;
+}
+
+.li a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+
+.button {
+    background-color: rgb(0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+    font-family: "Indie Flower";
+    font-size: 30px;
+    padding: 0px 10px;
+}
+
+.select-mens {
+    background-color: black;
+    text-transform: uppercase;
+    font-family: "Indie Flower";
+    font-size: 30px;
+    padding: 0px 0px;
+}
+
+.Mens-menu {
+    visibility: hidden;
+    position: absolute;
+    background-color: #292727;
+    list-style: none;
+    text-align: center;
+    padding: 20px 20px;
+    transform: translateY(-0.5em);
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.select-mens:hover .Mens-menu {
+    visibility: visible;
+    border-radius: 0px 0px 8px 8px;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0.3s;
+}
+
+.select-womens {
+    background-color: black;
+    text-transform: uppercase;
+    font-family: "Indie Flower";
+    font-size: 30px;
+    padding: 0px 0px;
+    border: 0px;
+}
+
+.womens-menu {
+    visibility: hidden;
+    position: absolute;
+    background-color: #292727;
+    list-style: none;
+    text-align: center;
+    padding: 20px 20px;
+    transform: translateY(-0.5em);
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.select-womens:hover .womens-menu {
+    visibility: visible;
+    border-radius: 0px 0px 8px 8px;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0.3s;
+}
+
+nav ul li {
+    list-style-type: none;
+    list-style: none;
+    padding: 0 5px;
+}
+
+.item-center {
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+a:link,
+a:visited {
+    -webkit-text-fill-color: rgb(242, 229, 153);
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover,
+a:active {
+    background-color: rgb(131, 128, 81);
+    border-radius: 60px;
+    transition-duration: 0.20s;
+    text-align: center;
+}
+
+.contacts {
+    height: 80px;
+    position: relative;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.HMWA{
+    font-size: x-large;
+    justify-content: space-between;
+}
+
+.body-mens {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.right {
+    align-items: center;
+    height: 50px;
+}
+
+
+.profile {
+    display: flex;
+    margin-left: 11px;
+    margin-right: 11px;
+}
+
+.button-profile {
+    background-color: rgb(0, 0, 0);
+    border: 0px;
+    padding: 10px;
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card {
+    margin: 0 0.5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+    border-radius: 0;
+}
+
+.carousel-inner {
+    padding: 1em;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: #e1e1e1;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+    .card img {
+        height: 11em;
+    }
+}
+
+@media screen and (max-width:1152px) {
+    .right{
+        height: 82px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav-container {
+        flex-wrap: wrap; 
+    }
+
+    .nav_img {
+        height: 140px;
+        width: 359px;
+        margin: auto;
+        position: sticky;
+    }
+
+    .space-between {
+        justify-content: none;
+    }
+    
+    .HMWA
+
+    /*home mens womens about us*/
+        {
+        margin-top: 5px;
+        margin-left: 0px;
+    }
+
+    .contacts {
+        height: 80px;
+        align-items: flex-start;
+        margin-top: 0px;
+    }
+
+    .Mens-menu {
+        visibility: hidden;
+        position: absolute;
+        background-color: #000000;
+        z-index: 30;
+        list-style: none;
+        text-align: center;
+        padding: 20px 20px;
+        transform: translateY(-0.5em);
+        transition: all 0.5s ease-in-out 0s;
+    }
+
+    .select-mens:hover .Mens-menu {
+        visibility: visible;
+        border-radius: 0px 0px 8px 8px;
+        transform: translateY(0%);
+        transition-delay: 0s, 0s, 0.3s;
+    }
+
+    .card img {
+        height: 11em;
+    }
+
+}
+
+/* .footerr{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 3px;
+    background-color: #1f75f6;
+} */

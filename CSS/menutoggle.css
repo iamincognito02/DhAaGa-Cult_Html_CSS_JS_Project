@@ -1,0 +1,119 @@
+.headerr{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    z-index: 10;
+}
+
+#header1 ul li {
+    list-style-type: none;
+    padding: 0 5px;
+    height: 60px;
+}
+
+.button-mainpage {
+    background-color: rgb(0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+    font-family: "Zeyada";
+    font-size: 25px;
+    padding: 0px 0px;
+}
+
+.sidebaricontoggle{
+    width: 100px;
+    height: 22px;
+    position: fixed;
+    z-index: 20;
+    top: 22px;
+    left: 15px;
+    cursor: pointer;
+}
+
+#sidebarmenu{
+    z-index: 10;
+    overflow: hidden;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 360px;
+    margin-top: 60px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(155, 150, 85);
+    transform: translateX(-360px);
+    transition: .30s ease-in-out
+}
+#opensidebarmenu:checked ~ #sidebarmenu{
+
+    transform: translateX(0px);
+}
+
+#header1{
+    position: fixed;
+    width: min-content;
+    left: 0;
+    top: 0;
+    margin-top: 60px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(155, 150, 85);
+    transform: translateX(0px);
+
+    transition: .30s ease-in-out
+}
+
+#opensidebarmenu:checked ~ #header1{
+    transform: translateX(360px);   
+    visibility: hidden;
+}
+
+.anchor-mainpage{
+    position: relative;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    color: rgb(155, 150, 85);
+    transform: translateX(0px);
+}
+
+
+.spinner{
+    height: 3px;
+    background-color:  rgb(155, 150, 85);
+    transition: all 0.4s;
+    width: 22px;
+}
+
+.spinner.middle,
+.spinner.bottom{
+    margin-top: 3px;
+}
+
+#opensidebarmenu:checked ~ .sidebaricontoggle > .spinner.top{
+    transform: rotate(90deg);
+    margin-top: 8px;
+    width: 22px;
+    margin-left: -9px;
+}
+
+
+#opensidebarmenu:checked ~ .sidebaricontoggle > .spinner.middle{
+    width: 22px;
+    transform: rotate(90deg);
+    margin: -3px -2px;
+}
+
+#opensidebarmenu:checked ~ .sidebaricontoggle > .spinner.bottom{
+    width: 22px;
+    transform: rotate(90deg);
+    margin: -2px 5px;
+}
+
+.Lbutton{
+    display: flex;
+    float: right;
+    background-color: rgb(0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    height: 60px;
+}

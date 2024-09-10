@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DhAaGa CULT - WOMENS</title>
+    <link rel="icon" href="img/DhAaGa_CULT1_2.ico" type="icon type">
+    <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/utils.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie%20Flower">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #dddb75;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .clearfix {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        #site-header,
+        #site-footer {
+            background: #fff;
+        }
+
+        #site-header {
+            margin: 0 0 30px 0;
+        }
+
+        #site-header h1 {
+            font-size: 31px;
+            font-weight: 300;
+            padding: 40px 0;
+            position: relative;
+            margin: 0;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+
+            -webkit-transition: color .2s linear;
+            -moz-transition: color .2s linear;
+            -ms-transition: color .2s linear;
+            -o-transition: color .2s linear;
+            transition: color .2s linear;
+        }
+
+        a:hover {
+            color: #53b5aa;
+        }
+
+        #site-header h1 span {
+            color: #53b5aa;
+        }
+
+        #site-header h1 span.last-span {
+            background: #fff;
+            padding-right: 150px;
+            position: absolute;
+            left: 217px;
+
+            -webkit-transition: all .2s linear;
+            -moz-transition: all .2s linear;
+            -ms-transition: all .2s linear;
+            -o-transition: all .2s linear;
+            transition: all .2s linear;
+        }
+
+        #site-header h1:hover span.last-span,
+        #site-header h1 span.is-open {
+            left: 363px;
+        }
+
+        #site-header h1 em {
+            font-size: 16px;
+            font-style: normal;
+            vertical-align: middle;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 980px;
+            font-size: larger;
+            font-weight: bolder;
+        }
+
+        #cart {
+            width: 100%;
+        }
+
+        #cart h1 {
+            font-weight: 300;
+        }
+
+        #cart a {
+            color: #6bdbce;
+            text-decoration: none;
+
+            -webkit-transition: color .2s linear;
+            -moz-transition: color .2s linear;
+            -ms-transition: color .2s linear;
+            -o-transition: color .2s linear;
+            transition: color .2s linear;
+        }
+
+        #cart a:hover {
+            color: #000;
+        }
+
+        .product.removed {
+            margin-left: 980px !important;
+            opacity: 0;
+        }
+
+        .product {
+            border: 1px solid #eee;
+            margin: 20px 0;
+            width: 100%;
+            height: 195px;
+            position: relative;
+
+            -webkit-transition: margin .2s linear, opacity .2s linear;
+            -moz-transition: margin .2s linear, opacity .2s linear;
+            -ms-transition: margin .2s linear, opacity .2s linear;
+            -o-transition: margin .2s linear, opacity .2s linear;
+            transition: margin .2s linear, opacity .2s linear;
+        }
+
+        .product img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .product header,
+        .product .content {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-style: none none solid none;
+            float: left;
+        }
+
+        .product header {
+            background: #000;
+            margin: 0 1% 20px 0;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            width: 24%;
+            height: 195px;
+        }
+
+        .product header:hover img {
+            opacity: .7;
+        }
+
+        .product header:hover h3 {
+            bottom: 73px;
+        }
+
+        .product header h3 {
+            background: #53b5aa;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 300;
+            line-height: 49px;
+            margin: 0;
+            padding: 0 30px;
+            position: absolute;
+            bottom: -50px;
+            right: 0;
+            left: 0;
+
+            -webkit-transition: bottom .2s linear;
+            -moz-transition: bottom .2s linear;
+            -ms-transition: bottom .2s linear;
+            -o-transition: bottom .2s linear;
+            transition: bottom .2s linear;
+        }
+
+        .remove {
+            cursor: pointer;
+        }
+
+        .product .content {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            height: 140px;
+            padding: 0 20px;
+            width: 75%;
+        }
+
+        .product h1 {
+            color: #20796e;
+            font-size: 25px;
+            font-weight: 300;
+            margin: 17px 0 20px 0;
+        }
+
+        .product footer.content {
+            height: 50px;
+            margin: 6px 0 0 0;
+            padding: 0;
+        }
+
+        .product footer .price {
+            background: #fcfcfc;
+            color: #000;
+            float: right;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 49px;
+            margin: 0;
+            padding: 0 30px;
+        }
+
+        .product footer .full-price {
+            background: #53b5aa;
+            color: #fff;
+            float: right;
+            font-size: 22px;
+            font-weight: 300;
+            line-height: 49px;
+            margin: 0;
+            padding: 0 30px;
+
+            -webkit-transition: margin .15s linear;
+            -moz-transition: margin .15s linear;
+            -ms-transition: margin .15s linear;
+            -o-transition: margin .15s linear;
+            transition: margin .15s linear;
+        }
+
+        .qt,
+        .qt-plus,
+        .qt-minus {
+            display: block;
+            float: left;
+        }
+
+        .qt {
+            font-size: 19px;
+            line-height: 50px;
+            width: 70px;
+            text-align: center;
+        }
+
+        .qt-plus,
+        .qt-minus {
+            background: #fcfcfc;
+            border: none;
+            font-size: 30px;
+            font-weight: 300;
+            height: 100%;
+            padding: 0 20px;
+            -webkit-transition: background .2s linear;
+            -moz-transition: background .2s linear;
+            -ms-transition: background .2s linear;
+            -o-transition: background .2s linear;
+            transition: background .2s linear;
+        }
+
+        .qt-plus:hover,
+        .qt-minus:hover {
+            background: #53b5aa;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .qt-plus {
+            line-height: 50px;
+        }
+
+        .qt-minus {
+            line-height: 47px;
+        }
+
+        #site-footer {
+            margin: 30px 0 0 0;
+        }
+
+        #site-footer {
+            padding: 40px;
+        }
+
+        #site-footer h1 {
+            background: #fcfcfc;
+            border: 1px solid #ccc;
+            border-style: none none solid none;
+            font-size: 24px;
+            font-weight: 300;
+            margin: 0 0 7px 0;
+            padding: 14px 40px;
+            text-align: center;
+        }
+
+        #site-footer h2 {
+            font-size: 24px;
+            font-weight: 300;
+            margin: 10px 0 0 0;
+        }
+
+        #site-footer h3 {
+            font-size: 19px;
+            font-weight: 300;
+            margin: 15px 0;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .btn {
+            background: #53b5aa;
+            border: 1px solid #999;
+            border-style: none none solid none;
+            cursor: pointer;
+            display: block;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 300;
+            padding: 16px 0;
+            width: 290px;
+            text-align: center;
+
+            -webkit-transition: all .2s linear;
+            -moz-transition: all .2s linear;
+            -ms-transition: all .2s linear;
+            -o-transition: all .2s linear;
+            transition: all .2s linear;
+        }
+
+        .btn:hover {
+            color: #fff;
+            background: #429188;
+        }
+
+        .type {
+            background: #fcfcfc;
+            font-size: 13px;
+            padding: 10px 16px;
+            left: 100%;
+        }
+
+        .type,
+        .color {
+            border: 1px solid #ccc;
+            border-style: none none solid none;
+            position: absolute;
+        }
+
+        .color {
+            width: 40px;
+            height: 40px;
+            right: -40px;
+        }
+
+        .minused {
+            margin: 0 50px 0 0 !important;
+        }
+
+        .added {
+            margin: 0 -50px 0 0 !important;
+        }
+    </style>
+    <!-- <script src="JS/shopping.js"></script> -->
+</head>
+
+<body>
+    <header class="nav-container">
+
+        <nav class="flex space-between item-center justify-center navbar">
+
+            <div class="contacts left flex">
+                <ul>
+                    <li>
+
+                        <button class="button">
+
+                            <a href="https://wa.me/917219769566" target="_blank" rel="noopener noreferrer"
+                                style="height: 50px; width: 50px;">
+                                <i class="bi bi-whatsapp"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="rgb(242, 229, 153)"
+                                    class="bi bi-whatsapp" viewBox="0 0 16 16" style="padding: 10px 10px;">
+                                    <path
+                                        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                                </svg>
+                            </a>
+
+                            <a href="https://instagram.com/dhaagacult?igshid=YmMyMTA2M2Y=" target="_blank"
+                                rel="noopener noreferrer" style="height: 50px; width: 50px;">
+                                <i class="bi bi-instagram"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="rgb(242, 229, 153)"
+                                    class="bi bi-instagram" viewBox="0 0 16 16" style="padding: 10px 10px;">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                </svg>
+                            </a>
+
+                            <a href="https://www.facebook.com/profile.php?id=100089763542571&mibextid=LQQJ4d"
+                                target="_blank" rel="noopener noreferrer" style="height: 50px; width: 50px;">
+                                <i class="bi bi-facebook"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="rgb(242, 229, 153)"
+                                    class="bi bi-facebook" viewBox="0 0 16 16" style="padding: 10px 10px;">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                </svg>
+                            </a>
+
+                            <a href="/Aboutus.html" target="_blank" rel="noopener noreferrer"
+                                style="height: 50px; width: 50px;">
+                                <i class="bi bi-info-circle-fill"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="rgb(242, 229, 153)"
+                                    class="bi bi-info-circle-fill" viewBox="0 0 16 16" style="padding: 10px 10px;">
+                                    <path
+                                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                                </svg>
+                            </a>
+
+                        </button>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="left flex HMWA" style="height: 80px;">
+
+                <ul class="flex item-center justify-center" style="padding: 0px;margin: 0px">
+
+                    <li><button class="button"><a href="/mainpage.html">HOME</a></button></li>
+                    <li class="select-mens"><a href="/mens.html">MENS</a>
+                    </li>
+                    <li><button class="select-womens"><a href="/womens.html">WOMENS</a>
+                            <div>
+                                <ul class="womens-menu">
+                                    <li><a href="#">Harems</a></li>
+                                    <li><a href="#">Hoppers</a></li>
+                                    <li><a href="#">Shorts</a></li>
+                                    <li><a href="#">CROP TOP</a></li>
+                                </ul>
+                            </div>
+                        </button>
+                    </li>
+                    <li><button class="button"><a href="/gypsyjhola.html">Gypsy Jhola</a></button></li>
+
+                </ul>
+
+            </div>
+
+            <div class="nav_img_div">
+                <img src="img/DhAaGa_CULT1_4_1.png" class="nav_img" />
+            </div>
+
+
+
+            <div class="right flex">
+
+                <ul class="SPB-ul">
+                    <li>
+                        <div class="search">
+                            <button class="button-search">
+                                <a href="#">
+                                    <i class="bi bi-search"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                        fill="rgb(155, 150, 85)" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg>
+                                </a>
+                            </button>
+                            <div class="search-bar">
+                                <ul class="search-ul">
+                                    <li>
+                                        <input type="search" class="nav-search" placeholder="search" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li>
+                        <div class="profile mx-2">
+                            <button class="button-profile"
+                                onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                                <a href="/login.html">
+                                    <i class="bi bi-person-bounding-box"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                        fill="rgb(242, 229, 153)" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                                        <path
+                                            d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
+                                        <path
+                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                    </svg>
+                                </a>
+                            </button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="bag mx-2">
+                            <button class="button-bag">
+                                <a href="#">
+                                    <i class="bi bi-bag-heart-fill"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                        fill="rgb(242, 229, 153)" class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                                    </svg>
+                                </a>
+                            </button>
+                        </div>
+                    </li>
+            </div>
+            </ul>
+
+
+        </nav>
+
+    </header>
+
+    <div class="container">
+
+        <section id="cart">
+            <article class="product">
+                <header>
+                    <a class="remove">
+                        <img src="img/png_20230201_140610_0000.png" alt="">
+
+                        <h3>Remove product</h3>
+                    </a>
+                </header>
+
+                <div class="content">
+
+                    <h1>Hopper</h1>
+                    Blue Hopper 
+                    <div title="You have selected this product to be shipped in the color yellow." style="top: 0"
+                        class="color yellow"></div>
+                </div>
+
+                <footer class="content">
+                    <span class="qt-minus">-</span>
+                    <span class="qt">1</span>
+                    <span class="qt-plus">+</span>
+
+                    <h2 class="full-price">
+                        750.00
+                    </h2>
+
+                    <h2 class="price">
+                        750.00
+                    </h2>
+                </footer>
+            </article>
+
+            <article class="product" >
+                <header>
+                    <a class="remove">
+                        <img src="img/Picsart_23-03-20_13-44-50-988.png" alt="" style="background: url(/img/png_20230201_140628_0000_1.png); background-size: auto;">
+
+                        <h3>Remove product</h3>
+                    </a>
+                </header>
+
+                <div class="content">
+
+                    <h1>Bag</h1>
+
+                </div>
+
+                <footer class="content">
+
+                    <span class="qt-minus">-</span>
+                    <span class="qt">1</span>
+                    <span class="qt-plus">+</span>
+
+                    <h2 class="full-price">
+                        79.99
+                    </h2>
+
+                    <h2 class="price">
+                        79.99
+                    </h2>
+                </footer>
+            </article>
+
+            <article class="product">
+                <header>
+                    <a class="remove">
+                        <img src="img/Picsart_23-04-05_19-12-41-561.png" alt="" style="background: url(/img/png_20230201_140628_0000_1.png); background-size: auto;">
+
+                        <h3>Remove product</h3>
+                    </a>
+                </header>
+
+                <div class="content">
+
+                    <h1>Hopper</h1>
+                </div>
+
+                <footer class="content">
+
+                    <span class="qt-minus">-</span>
+                    <span class="qt">1</span>
+                    <span class="qt-plus">+</span>
+
+                    <h2 class="full-price">
+                        170.99
+                    </h2>
+
+                    <h2 class="price">
+                        170.99
+                    </h2>
+                </footer>
+            </article>
+
+        </section>
+
+    </div>
+
+    <footer id="site-footer">
+        <div class="container clearfix">
+
+            <div class="left">
+                <h2 class="subtotal">Subtotal: <span>163.96</span></h2>
+                <h3 class="tax">Taxes (5%): <span>8.2</span></h3>
+                <h3 class="shipping">Shipping: <span>5.00</span></h3>
+            </div>
+
+            <div class="right">
+                <h1 class="total">Total: <span>177.16</span></h1>
+                <a class="btn">Checkout</a>
+            </div>
+
+        </div>
+    </footer>
+    <script src="JS/shopping.js"></script>
+</body>
+
+</html>
